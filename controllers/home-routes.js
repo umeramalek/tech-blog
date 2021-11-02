@@ -4,9 +4,8 @@ const withAuth = require('../utils/auth');
 
 // get method for all posts in homepage
 // route for single post
-// Find the logged in user based on the session ID
- // If the user is already logged in, redirect the request to another route
-// sign up route
+
+ 
 
 // get all posts 
 router.get('/', async(req,res) => {
@@ -61,7 +60,37 @@ router.get('/project/:id', async (req, res) => {
     }
   });
 
-  
+// Dashboard
+router.get('/dashboard', redirect, async(req,res) => {
+    try {
+        const userData = await User.findByPk(req.session.uder_id, {
+            include: [{model:Post, attributes:['id','title','content']}]
+        });
+    
+        const user = await userData.get({plain:true});
+        res.render('dashboard', {user, loggedIn: req.session.loggedIn});
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+
+// edit a post 
+router.get('/post/editpost/:id', async (req,res) => {
+    try{
+        const editData = await Post.findByPk(req.params.id, {
+            where: {user_id: req.session.id}
+        });
+
+        const edit = await editData.get({plain:true});
+        res.render('edit_post', {postedit, loggedIn: req.session.loggedIn});
+    } catch(err) {
+        console.log(err),
+        res.status(500).json(err)
+    }
+});
+
+
+
 
 
 module.exports = router;
