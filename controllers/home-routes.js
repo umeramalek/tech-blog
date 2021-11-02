@@ -61,7 +61,7 @@ router.get('/project/:id', async (req, res) => {
   });
 
 // Dashboard
-router.get('/dashboard', redirect, async(req,res) => {
+router.get('/dashboard', withAuth, async(req,res) => {
     try {
         const userData = await User.findByPk(req.session.uder_id, {
             include: [{model:Post, attributes:['id','title','content']}]

@@ -40,4 +40,4 @@ Comment.init(
     }
 );
 
-modulw.exports = Comment;
+module.exports = Comment;
