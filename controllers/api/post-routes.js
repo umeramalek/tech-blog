@@ -32,7 +32,7 @@ router.post('/:id', async(req,res) => {
             post_id: req.body.post_id
         });
         res.status(200).json(newComment);
-        console.log(newComment);
+    
     } catch(err) {
         res.status(400).json(err)
         console.log(err)
