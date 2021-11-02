@@ -1,4 +1,4 @@
-const PoolCluster = require('mysql2/typings/mysql/lib/PoolCluster');
+
 const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
