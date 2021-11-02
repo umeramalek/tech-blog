@@ -89,7 +89,15 @@ router.get('/post/editpost/:id', async (req,res) => {
     }
 });
 
+// login with get ruote
 
+router.get('/login', (req,res) => {
+    if (req.session.loggedIn){
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
+})
 
 
 
