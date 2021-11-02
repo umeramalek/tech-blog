@@ -22,8 +22,9 @@ Tech blog is a CMS-style blog site similar to a Wordpress site, where developers
 6. Test in Insomnia
 7. Heroku deployment
 
-
-
+## Image/Mock-up
+* It works on the local host but not on heroku because of a server issue 
+![](img/photo.png)
 
 ## Built With
 
