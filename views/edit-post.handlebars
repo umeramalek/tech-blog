@@ -1,0 +1,18 @@
+<form class="form" id="update-post">
+    <h2>Update Post</h2>
+    <div class="form-group">
+        <label for="updated-title">Title: </label>
+        <input class="form-input" type="text" id="updated-title" value="{{post.title}}"/>
+    </div>
+    <div class="form-group">
+        <label for="updated-content">Content: </label>
+        <input class="form-input" type="text" id="updated-content" value="{{post.content}}"/>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" id="submit-form" type="submit">Submit</button>
+    </div>
+</form>
+
+<button class="btn btn-danger" id="delete-button">Delete Post</button>
+
+<script src="/js/post.js"></script>

@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Dashboard</h2>
+
+    {{#each user.posts as |post|}}
+        <div class="card">
+    <div class="d-flex justify-content-center card-header">
+        <p>{{post.title}}</p>
+    </div>
+
+    <div class="card-body">
+        <p>{{post.content}}</p>
+        <p>Post by: {{user.username}}</p>
+        <a href="/post/{{id}}">View Post</a>
+        <a href="/post/editPost/{{id}}">Edit Post</a>
+    </div>
+    </div>
+    {{/each}}
+
+    <div class="d-flex justify-content center">
+        <h2>Create Post</h2>
+
+        <form class="form" id="post-form">
+            <div class="form-group">
+                <label for="new-title">Title:</label>
+                <input class="form-input" type="text" id="new-title"/>
+            </div>
+            <div class="form-group">
+                <label for="new-content">Content:</label>
+                <input class="form-input" type="text" id="new-content"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Add Post</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<script src="./js/dashboard.js"></script>
