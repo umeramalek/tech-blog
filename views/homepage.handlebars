@@ -1,5 +1,5 @@
 <div class="container">
-{{#each posts as |post|}}
+{{#each data as |post|}}
 <div class="card">
     <div class="d-flex justify-content-center card-header">
         <p>{{post.title}}</p>
@@ -7,7 +7,7 @@
 
     <div class="card-body">
         <p>{{post.content}}</p>
-        <p>Post by: {{user.username}}</p>
+        <p>Post by: {{post.user.username}}</p>
         <a href="/post/{{post.id}}">View Post</a>
     </div>
 </div>
