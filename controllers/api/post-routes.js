@@ -22,8 +22,8 @@ router.post('/post', async(req, res) => {
     }
 });
 
-module.exports = router;
 
+// create a new post 
 router.post('/:id', async(req,res) => {
     try {
         const newComment = await Comment.create({
@@ -35,5 +35,40 @@ router.post('/:id', async(req,res) => {
         console.log(newComment);
     } catch(err) {
         res.status(400).json(err)
+        console.log(err)
     }
-})
+});
+
+// update a post 
+router.put('/:id', async(req,res) => {
+    try {
+        const updatePost = await Post.update({
+            content: req.body.content,
+            titel: req.body.title,
+        }, {
+            where:{id: req.params.id, user_id:req.session.user_id}
+        });
+        res.status(200).json(updatePost)
+        } catch(err) {
+            res.status(400).json(err)
+            console.log(err)
+        }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = router;
