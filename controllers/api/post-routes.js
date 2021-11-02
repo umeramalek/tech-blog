@@ -56,7 +56,17 @@ router.put('/:id', async(req,res) => {
 });
 
 
-
+// delete a post 
+router.delete('/:id', async (req,res) => {
+    try{
+        const deletePost = await Post.destroy({where:{id:req.params.id}})
+        res.status(200).json(deletePost);
+    } catch (err) {
+        console.log(err)
+        res.status(400).json(err);
+        
+    }
+})
 
 
 
