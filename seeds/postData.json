@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Dumbledore",
+        "post_text": "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.",
+        "user_id": 1
+    },
+    {
+        "title": "Harry",
+        "post_text": "I solemnly swear I am up to no good." ,
+        "user_id": 2
+    },
+    {
+        "title": "Hermoine",
+        "post_text": "Just because it’s taken you three years to notice, Ron, doesn’t mean no one else has spotted I’m a girl!",
+        "user_id": 1
+    },
+    {
+        "title": "Sirius",
+        "post_text": "We’ve all got both light and dark inside us. What matters is the part we choose to act on. That’s who we really are." ,
+        "user_id": 4
+    }
+]

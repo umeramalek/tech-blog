@@ -1,16 +1,19 @@
-<div class="container">
-{{#each data as |post|}}
-<div class="card">
-    <div class="d-flex justify-content-center card-header">
-        <p>{{post.title}}</p>
-    </div>
+{{!-- landing page, shows all blogposts --}}
 
-    <div class="card-body">
-        <p>{{post.content}}</p>
-        <p>Post by: {{post.user.username}}</p>
-        <a href="/post/{{post.id}}">View Post</a>
-    </div>
+{{#each posts as |blogpost|}}
+<div class ="row mb-4 custom-post">
+    <a href="/post/{{blogpost.id}}">
+        <div class = "col md-5">
+            <h2>
+                {{blogpost.title}}
+            </h2>
+            <p>
+                {{blogpost.post_text}}
+            </p>
+            <p class ="author">
+                Written by {{blogpost.user.username}} on {{format_date blogpost.date_created}}
+            </p>
+        </div>
+    </a>
 </div>
-
 {{/each}}
-</div>

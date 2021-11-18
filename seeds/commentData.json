@@ -1,0 +1,26 @@
+[
+    {
+        "comment_text": "You're a little scary sometimes, you know that? Brilliant ... but scary.",
+        "user_id": 4,
+        "post_id": 3,
+        "commenter": "Ron Weasly"
+    },
+    {
+        "comment_text": "Yer a wizard Harry." ,
+        "user_id": 1,
+        "post_id": 3,
+        "commenter": "Hagrid"
+    },
+    {
+        "comment_text": "Dobby is free.",
+        "user_id": 3,
+        "post_id": 3,
+        "commenter": "Dobby"
+    },
+    {
+        "comment_text": "I hope you're pleased with yourselves. We could all have been killed — or worse, expelled. Now if you don't mind, I'm going to bed." ,
+        "user_id": 3,
+        "post_id": 2,
+        "commenter": "Hermoine Granger"
+    }
+]

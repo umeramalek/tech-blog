@@ -8,6 +8,8 @@ class User extends Model {
     }
 }
 
+// Sets up the model for user, has an ID, username and password (which gets hashed via bcrypt)
+
 User.init(
     {
         id: {
@@ -20,35 +22,33 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: { isEmail:true },
+
         },
         password: {
             type: DataTypes.STRING,
-            allowNull:false,
+            allowNull: false,
             validate: {
-                min: 6
-            }
-        }
+                len: [8],
+            },
+        },
     },
     {
         hooks: {
-            async beforeCreate(newUserData) {
+            beforeCreate: async (newUserData) => {
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
                 return newUserData;
-            }
+            },
+            beforeUpdate: async (updatedUserData) => {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                return updatedUserData;
+            },
         },
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'user'
     }
 );
 
 module.exports = User;
-  

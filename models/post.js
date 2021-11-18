@@ -3,6 +3,8 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
+// Sets up model for Post (blogpost) table, has an id, title, text and an associated user id. It also gets timestamped
+
 Post.init(
     {
         id: {
@@ -15,29 +17,30 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        content: {
-            type: DataTypes.STRING,
+        post_text: {
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
-          },
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id',
-            }
-        },      
+            },
+        },
     },
-     {
+    {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post'
-     }   
-);
+        modelName: 'post',
+    }
+)
 
 module.exports = Post;

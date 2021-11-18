@@ -1,0 +1,23 @@
+
+[
+    {
+        "username": "Harry",
+        "password": "potter",
+        "id": 1
+    },
+    {
+        "username": "Albert",
+        "password": "Dumbledore",
+        "id": 2
+    },
+    {
+        "username": "Hermoine",
+        "password": "Granger",
+        "id": 3
+    },
+    {
+        "username": "Ron",
+        "password": "Weasly",
+        "id": 4
+    }
+]

@@ -3,6 +3,8 @@ const sequelize = require('../config/connection');
 
 class Comment extends Model {}
 
+// Sets up model for Comment table, has an id, text, an associated post id and an associated user id. It also gets timestamped
+
 Comment.init(
     {
         id: {
@@ -11,37 +13,39 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        content: {
-            type: DataTypes.STRING,
+        comment_text: {
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
-          },
+        },
         user_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             references: {
                 model: 'user',
                 key: 'id',
-            }
+            },
+        },
+        commenter: {
+            type: DataTypes.TEXT,
         },
         post_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             references: {
                 model: 'post',
                 key: 'id',
-            }
-        }
+            },
+        },
     },
     {
         sequelize,
-        freezeTablename: true,
+        timestamps: false,
+        freezeTableName: true,
         underscored: true,
-        modelName: 'comment'
+        modelName: 'comment',
     }
 );
 
