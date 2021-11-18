@@ -1,4 +1,5 @@
-const postSection = async (event) => {
+const postForm = async (event) => {
+    
     event.preventDefault();
 
     const title = document.querySelectorAll("#update-post input")[0].value.trim();
@@ -24,4 +25,4 @@ const deletePost = async () => {
 };
 
 document.querySelector("#delete-button").addEventListener('click', deletePost);
-document.querySelector("#submit-form").addEventListener('click', postSection);
+document.querySelector("#submit-form").addEventListener('click', postForm);

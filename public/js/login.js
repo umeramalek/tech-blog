@@ -1,4 +1,4 @@
-const loginSection = async (event) => {
+const loginForm = async (event) => {
     event.preventDefault();
 
     const email = document.querySelector("#email-login").value.trim();
@@ -16,14 +16,14 @@ const loginSection = async (event) => {
         }
     });
     if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/dashboard');
     }
     else {
         alert('Login failure');
     }
 };
 
-const signUpSection = async (event) => {
+const signUpForm = async (event) => {
     event.preventDefault();
 
     const username = document.querySelector("#name-signup").value.trim();
@@ -40,7 +40,7 @@ const signUpSection = async (event) => {
             }
         });
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/dashboard');
         }
         else {
             alert('Failed to signup');
@@ -48,5 +48,5 @@ const signUpSection = async (event) => {
     }
 };
 
-document.querySelector("#login-form").addEventListener('submit', loginSection);
-document.querySelector('.signup-form').addEventListener('submit', signUpSection);
+document.querySelector("#login-form").addEventListener('submit', loginForm);
+document.querySelector('.signup-form').addEventListener('submit', signUpForm);
