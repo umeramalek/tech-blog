@@ -1,4 +1,4 @@
-{{!-- Sets the blog post --}}
+
 <div class ="row mb-4">
         <div class = "col md-5 custom-post">
             <h2>
@@ -12,7 +12,7 @@
             </p>
         </div>
 </div>
-{{!-- iterates through each comment --}}
+
 
 {{#each blogPost.comments as |comment|}}
 <div class ="row mb-4 custom-post">
@@ -22,7 +22,7 @@
 {{/each}}
 
 {{#if logged_in}}
-<button type="button" class="btn btn-secondary" id="new-comment-btn">+ New Comment</button>
+<button type="button" class="btn btn-info" id="new-comment-btn">+ New Comment</button>
 <form class="comment-form hidden">
   <div class="form-group">
     <label for="blog-content">New Comment</label>
