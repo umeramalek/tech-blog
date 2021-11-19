@@ -23,8 +23,11 @@ Tech blog is a CMS-style blog site similar to a Wordpress site, where developers
 7. Heroku deployment
 
 ## Image/Mock-up
+
 * It works on the local host but not on heroku because of a server issue 
-![](img/photo.png)
+
+
+![](img/techblog.gif)
 
 ## Built With
 
@@ -40,7 +43,7 @@ Tech blog is a CMS-style blog site similar to a Wordpress site, where developers
 
 ## Deployed Link
 
-* [See Live Site](#) https://stark-sands-63949.herokuapp.com/
+* [See Live Site](#) https://cryptic-lake-27788.herokuapp.com/
 
 * [See Live Site](#) https://github.com/umeramalek/tech-blog
 
