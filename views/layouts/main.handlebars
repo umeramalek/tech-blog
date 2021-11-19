@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Tech Blog</title>
@@ -23,9 +22,9 @@
         {{else}}
         <a class="nav-item nav-link" href="/login">Login</a>
         {{/if}}
-        <button class="btn btn-outline-danger" type="button" id="logout" >Logout</button>
+        <button class="btn btn-outline-danger" type="button" id="logout" href="#">Logout</button>
         </div>
-    </div>
+    </div>                                                         
     </nav>
 
 
@@ -33,10 +32,8 @@
 <div id="main">
     {{{body}}}
 </div>
+<script src="./js/logout.js"></script>
 
-{{#if loggedIn}}
-    <script src="/js/logout.js"></script>
-{{/if}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
